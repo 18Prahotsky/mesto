@@ -3,14 +3,13 @@
   width: 22px;
   margin-right: 20px;
   margin-left: 20px;
-  
 }
 
-.photo-card__like:hover{
+.photo-card__like:hover {
   opacity: 0.5;
 }
 
 .photo-card__like:active {
- background-color: blue;
-  transition: background-color 0s 
+  background-color: blue;
+  transition: background-color 0s;
 }
