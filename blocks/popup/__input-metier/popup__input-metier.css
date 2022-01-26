@@ -1,0 +1,23 @@
+.popup__input-metier {
+  margin: 30px auto 0;
+  width: 358px;
+  height: 27px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000000;
+
+}
+
+@media screen and (max-width: 810px) {
+  .popup__input-metier {
+    width: 238px;
+    height: 27px;
+    margin: 30px auto 0;
+  }
+}

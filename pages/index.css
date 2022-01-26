@@ -1,0 +1,49 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
+
+@import url(../blocks/page/page.css);
+
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__input-metier/popup__input-metier.css);
+@import url(../blocks/popup/__input-name/popup__input-name.css);
+@import url(../blocks/popup/__input-save/popup__input-save.css);
+@import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/__close-icon/popup__close-icon.css);
+@import url(../blocks/popup/_open/popup_open.css);
+
+@import url(../blocks/header/header.css);
+@import url(../blocks/logo/logo.css);
+
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__info/_block/profile__info_block.css);
+@import url(../blocks/profile/__info/_name/profile__info_name.css);
+@import url(../blocks/profile/__info/_metier/profile__info_metier.css);
+@import url(../blocks/profile/__add-button/profile__add-button.css);
+@import url(../blocks/profile/__info/_edit-button/profile__info_edit-button.css);
+
+@import url(../blocks/photo-card/photo-card.css);
+@import url(../blocks/photo-card/__element/photo-card__element.css);
+@import url(../blocks/photo-card/__image/photo-card__image.css);
+@import url(../blocks/photo-card/__name/photo-card__name.css);
+@import url(../blocks/photo-card/__like/photo-card__like.css);
+@import url(../blocks/photo-card/__title/photo-card__title.css);
+@import url(../blocks/photo-card/__image-square/photo-card__image-square.css);
+
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+@import url(../blocks/footer/footer.css);
+
+/* 
+section,
+p,
+a,
+img,
+div,
+h1,
+h2,
+header,
+footer {
+  border: 1px red solid;
+} */

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 viewport-fit=cover"
+    />
+    <link href="./pages/index.css" rel="stylesheet" />
+    <title>Mesto</title>
+  </head>
+  <body>
+    <div class="page">
+      <div class="popup">
+        <div class="popup__container">
+          <button class="popup__close-icon"></button>
+          <p class="popup__title">Редактировать профиль</p>
+          <input type="text" class="popup__input-name" value="Ваше имя" />
+          <input type="text" class="popup__input-metier" value="Ваше хобби" />
+          <button class="popup__input-save">Сохранить</button>
+        </div>
+      </div>
+      <header class="header">
+        <img src="./images/logo.svg" alt="Место" class="logo" />
+      </header>
+      <main>
+        <section class="profile">
+          <img src="./images/avatar.jpg" alt="Аватар" class="profile__avatar" />
+          <div class="profile__info">
+            <div class="profile__info_block">
+              <p class="profile__info_name">Жак Ив Кусто</p>
+              <button class="profile__info_edit-button"></button>
+            </div>
+            <p class="profile__info_metier">Исследователь океана</p>
+          </div>
+          <button class="profile__add-button"></button>
+        </section>
+        <section class="photo-card">
+          <div class="photo-card__element">
+            <div class="photo-card__image-square">
+              <img
+                src="./images/bailkal.jpeg"
+                alt="Байкал"
+                class="photo-card__image"
+              />
+            </div>
+            <div class="photo-card__title">
+              <p class="photo-card__name">Байкал</p>
+              <img
+                src="./images/like.svg"
+                alt="Нравится"
+                class="photo-card__like"
+              />
+            </div>
+          </div>
+          <div class="photo-card__element">
+            <div class="photo-card__image-square">
+              <img
+                src="./images/Kamchatka.jpeg"
+                alt="Камчатка"
+                class="photo-card__image"
+              />
+            </div>
+            <div class="photo-card__title">
+              <p class="photo-card__name">Камчатка</p>
+              <img
+                src="./images/like.svg"
+                alt="Нравится"
+                class="photo-card__like"
+              />
+            </div>
+          </div>
+          <div class="photo-card__element">
+            <div class="photo-card__image-square">
+              <img
+                src="./images/Moscow.jpeg"
+                alt="Москва"
+                class="photo-card__image"
+              />
+            </div>
+            <div class="photo-card__title">
+              <p class="photo-card__name">Москва</p>
+              <img
+                src="./images/like.svg"
+                alt="Нравится"
+                class="photo-card__like"
+              />
+            </div>
+          </div>
+          <div class="photo-card__element">
+            <div class="photo-card__image-square">
+              <img
+                src="./images/Saint Petersburg.jpeg"
+                alt="Санкт-Петербург"
+                class="photo-card__image"
+              />
+            </div>
+            <div class="photo-card__title">
+              <p class="photo-card__name">Санкт-Петербург</p>
+              <img
+                src="./images/like.svg"
+                alt="Нравится"
+                class="photo-card__like"
+              />
+            </div>
+          </div>
+          <div class="photo-card__element">
+            <div class="photo-card__image-square">
+              <img
+                src="./images/Sochi.jpeg"
+                alt="Сочи"
+                class="photo-card__image"
+              />
+            </div>
+            <div class="photo-card__title">
+              <p class="photo-card__name">Сочи</p>
+              <img
+                src="./images/like.svg"
+                alt="Нравится"
+                class="photo-card__like"
+              />
+            </div>
+          </div>
+          <div class="photo-card__element">
+            <div class="photo-card__image-square">
+              <img
+                src="./images/Yalta.jpeg"
+                alt="Ялта"
+                class="photo-card__image"
+              />
+            </div>
+            <div class="photo-card__title">
+              <p class="photo-card__name">Ялта</p>
+              <img
+                src="./images/like.svg"
+                alt="Нравится"
+                class="photo-card__like"
+              />
+            </div>
+          </div>
+          <div class="photo-card__element">
+            <div class="photo-card__image-square">
+              <img
+                src="./images/ufa.jpeg"
+                alt="Уфа"
+                class="photo-card__image"
+              />
+            </div>
+            <div class="photo-card__title">
+              <p class="photo-card__name">Уфа</p>
+              <img
+                src="./images/like.svg"
+                alt="Нравится"
+                class="photo-card__like"
+              />
+            </div>
+          </div>
+          <div class="photo-card__element">
+            <div class="photo-card__image-square">
+              <img
+                src="./images/tula.jpeg"
+                alt="Тула"
+                class="photo-card__image"
+              />
+            </div>
+            <div class="photo-card__title">
+              <p class="photo-card__name">Тула</p>
+              <img
+                src="./images/like.svg"
+                alt="Нравится"
+                class="photo-card__like"
+              />
+            </div>
+          </div>
+          <div class="photo-card__element">
+            <div class="photo-card__image-square">
+              <img
+                src="./images/orenburg.jpeg"
+                alt="Оренбург"
+                class="photo-card__image"
+              />
+            </div>
+            <div class="photo-card__title">
+              <p class="photo-card__name">Оренбург</p>
+              <img
+                src="./images/like.svg"
+                alt="Нравится"
+                class="photo-card__like"
+              />
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">© 2022 Mesto Russia</p>
+      </footer>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

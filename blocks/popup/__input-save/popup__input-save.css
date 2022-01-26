@@ -1,0 +1,30 @@
+.popup__input-save {
+  margin: 48px auto 0;
+  height: 50px;
+  width: 358px;
+  background-color: #000;
+  border: none;
+  border-radius: 2px;
+  background-position: center;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 810px) {
+  .popup__input-save {
+    width: 238px;
+    height: 46px;
+    margin: 45px auto 0;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.popup__input-save:hover {
+  opacity: 0.8;
+}
