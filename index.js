@@ -3,6 +3,10 @@ let profileInfoEditButton = document.querySelector(
 );
 let popupCloseIcon = document.querySelector(".popup__close-icon");
 let popup = document.querySelector(".popup");
+let popupInputName = document.querySelector(".popup__input-name");
+let popupInputMetier = document.querySelector(".popup__input-metier");
+let profileInfoName = document.querySelector(".profile__info_name");
+let profileInfoMetier = document.querySelector(".profile__info_metier");
 
 function openPopup() {
   console.log("Открыли попап");
@@ -15,11 +19,6 @@ function closePopup() {
   console.log("Закрыли попап");
 }
 popupCloseIcon.addEventListener("click", closePopup);
-
-let popupInputName = document.querySelector(".popup__input-name");
-let popupInputMetier = document.querySelector(".popup__input-metier");
-let profileInfoName = document.querySelector(".profile__info_name");
-let profileInfoMetier = document.querySelector(".profile__info_metier");
 
 function addPopupInputAtributValue() {
   popupInputName.setAttribute("value", profileInfoName.textContent);
