@@ -1,12 +1,12 @@
 let profileInfoEditButton = document.querySelector(
-  ".profile__info_edit-button"
+  ".profile__info-edit-button"
 );
 let popupCloseIcon = document.querySelector(".popup__close-icon");
 let popup = document.querySelector(".popup");
 let popupInputName = document.querySelector(".popup__input-name");
 let popupInputMetier = document.querySelector(".popup__input-metier");
-let profileInfoName = document.querySelector(".profile__info_name");
-let profileInfoMetier = document.querySelector(".profile__info_metier");
+let profileInfoName = document.querySelector(".profile__info-name");
+let profileInfoMetier = document.querySelector(".profile__info-metier");
 
 function openPopup() {
   console.log("Открыли попап");

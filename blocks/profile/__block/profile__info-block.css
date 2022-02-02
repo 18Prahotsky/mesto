@@ -1,10 +1,10 @@
-.profile__info_block {
+.profile__info-block {
   display: flex;
   flex-direction: row;
 }
 
 @media screen and (max-width: 810px) {
-  .profile__info_block {
+  .profile__info-block {
     justify-content: center;
     position: relative;
     left: 14px;

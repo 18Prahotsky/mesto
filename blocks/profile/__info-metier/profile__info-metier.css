@@ -1,4 +1,4 @@
-.profile__info_metier {
+.profile__info-metier {
   margin: 16px auto auto 0;
   max-width: 336px;
   font-family: Inter, Arial, Helvetica, sans-serif;
@@ -12,7 +12,7 @@
 }
 
 @media screen and (max-width: 810px) {
-  .profile__info_metier {
+  .profile__info-metier {
     margin: 14px auto 0;
     max-width: 282px;
     font-size: 14px;

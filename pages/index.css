@@ -16,13 +16,13 @@
 @import url(../blocks/logo/logo.css);
 
 @import url(../blocks/profile/profile.css);
-@import url(../blocks/profile/__avatar/profile__avatar.css);
-@import url(../blocks/profile/__info/profile__info.css);
-@import url(../blocks/profile/__info/_block/profile__info_block.css);
-@import url(../blocks/profile/__info/_name/profile__info_name.css);
-@import url(../blocks/profile/__info/_metier/profile__info_metier.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
-@import url(../blocks/profile/__info/_edit-button/profile__info_edit-button.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__block/profile__info-block.css);
+@import url(../blocks/profile/__info-edit-button/profile__info-edit-button.css);
+@import url(../blocks/profile/__info-metier/profile__info-metier.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__name/profile__info-name.css);
 
 @import url(../blocks/photo-card/photo-card.css);
 @import url(../blocks/photo-card/__element/photo-card__element.css);
