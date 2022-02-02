@@ -1,4 +1,7 @@
-.page {
-  background-color: #000000;
+.page{
   min-width: 320px;
+}
+
+body {
+  background-color: #000000;
 }
