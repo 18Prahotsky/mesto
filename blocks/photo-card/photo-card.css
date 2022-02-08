@@ -1,6 +1,5 @@
 .photo-card {
   display: grid;
-  max-width: 880px;
   margin: 50px auto 0;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-gap: 17px 20px;

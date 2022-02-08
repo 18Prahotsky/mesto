@@ -11,17 +11,40 @@
   </head>
   <body>
     <div class="page">
-      <div class="popup">
+      <section class="popup">
         <div class="popup__container">
           <button class="popup__close-icon"></button>
-          <p class="popup__title">Редактировать профиль</p>
-          <input type="text" class="popup__input-name" value="Ваше имя" />
-          <input type="text" class="popup__input-metier" value="Ваше хобби" />
-          <button class="popup__input-save">Сохранить</button>
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <form class="popup__form">
+            <input
+              type="text"
+              class="popup__input-name"
+              placeholder="Ваше имя"
+            />
+            <input
+              type="text"
+              class="popup__input-metier"
+              placeholder="Ваше хобби"
+            />
+            <button class="popup__input-save" type="submit">Сохранить</button>
+          </form>
         </div>
-      </div>
+      </section>
+
+      <!-- <section class="popup popup__profile">
+        <div class="popup__container">
+          <button class="popup__close-button" type="button" aria-label="close"></button>
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <form class="popup__form" name="userform">
+            <input type="text" class="popup__input popup__input_user_name" value="Имя пользователя" name="username">
+            <input type="text" class="popup__input popup__input_user_info" value="Информация о пользователе" name="userinfo">
+            <button class="popup__submit-button" type="submit" value="Сохранить">Сохранить</button>
+          </form>
+        </div>
+      </section> -->
+
       <header class="header">
-        <img src="./images/logo.svg" alt="Место" class="logo" />
+        <img src="./images/logo.svg" alt="Место" class="header__logo" />
       </header>
       <main>
         <section class="profile">
@@ -36,7 +59,7 @@
           <button class="profile__add-button"></button>
         </section>
         <section class="photo-card">
-          <div class="photo-card__element">
+          <article class="photo-card__element">
             <div class="photo-card__image-square">
               <img
                 src="./images/bailkal.jpeg"
@@ -48,8 +71,8 @@
               <p class="photo-card__name">Байкал</p>
               <div class="photo-card__like"></div>
             </div>
-          </div>
-          <div class="photo-card__element">
+          </article>
+          <article class="photo-card__element">
             <div class="photo-card__image-square">
               <img
                 src="./images/Kamchatka.jpeg"
@@ -61,8 +84,8 @@
               <p class="photo-card__name">Камчатка</p>
               <div class="photo-card__like"></div>
             </div>
-          </div>
-          <div class="photo-card__element">
+          </article>
+          <article class="photo-card__element">
             <div class="photo-card__image-square">
               <img
                 src="./images/Moscow.jpeg"
@@ -74,8 +97,8 @@
               <p class="photo-card__name">Москва</p>
               <div class="photo-card__like"></div>
             </div>
-          </div>
-          <div class="photo-card__element">
+          </article>
+          <article class="photo-card__element">
             <div class="photo-card__image-square">
               <img
                 src="./images/SaintPetersburg.jpeg"
@@ -87,8 +110,8 @@
               <p class="photo-card__name">Санкт-Петербург</p>
               <div class="photo-card__like"></div>
             </div>
-          </div>
-          <div class="photo-card__element">
+          </article>
+          <article class="photo-card__element">
             <div class="photo-card__image-square">
               <img
                 src="./images/Sochi.jpeg"
@@ -100,8 +123,8 @@
               <p class="photo-card__name">Сочи</p>
               <div class="photo-card__like"></div>
             </div>
-          </div>
-          <div class="photo-card__element">
+          </article>
+          <article class="photo-card__element">
             <div class="photo-card__image-square">
               <img
                 src="./images/Yalta.jpeg"
@@ -113,8 +136,8 @@
               <p class="photo-card__name">Ялта</p>
               <div class="photo-card__like"></div>
             </div>
-          </div>
-          <div class="photo-card__element">
+          </article>
+          <article class="photo-card__element">
             <div class="photo-card__image-square">
               <img
                 src="./images/ufa.jpeg"
@@ -126,8 +149,8 @@
               <p class="photo-card__name">Уфа</p>
               <div class="photo-card__like"></div>
             </div>
-          </div>
-          <div class="photo-card__element">
+          </article>
+          <article class="photo-card__element">
             <div class="photo-card__image-square">
               <img
                 src="./images/tula.jpeg"
@@ -139,8 +162,8 @@
               <p class="photo-card__name">Тула</p>
               <div class="photo-card__like"></div>
             </div>
-          </div>
-          <div class="photo-card__element">
+          </article>
+          <article class="photo-card__element">
             <div class="photo-card__image-square">
               <img
                 src="./images/orenburg.jpeg"
@@ -152,7 +175,7 @@
               <p class="photo-card__name">Оренбург</p>
               <div class="photo-card__like"></div>
             </div>
-          </div>
+          </article>
         </section>
       </main>
       <footer class="footer">

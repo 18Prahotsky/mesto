@@ -1,46 +1,48 @@
-let profileInfoEditButton = document.querySelector(
+const profileInfoEditButton = document.querySelector(
   ".profile__info-edit-button"
 );
-let popupCloseIcon = document.querySelector(".popup__close-icon");
-let popup = document.querySelector(".popup");
-let popupInputName = document.querySelector(".popup__input-name");
-let popupInputMetier = document.querySelector(".popup__input-metier");
-let profileInfoName = document.querySelector(".profile__info-name");
-let profileInfoMetier = document.querySelector(".profile__info-metier");
-
-function openPopup() {
-  console.log("Открыли попап");
-  popup.classList.add("popup_open");
-}
-profileInfoEditButton.addEventListener("click", openPopup);
-
-function closePopup() {
-  popup.classList.remove("popup_open");
-  console.log("Закрыли попап");
-}
-popupCloseIcon.addEventListener("click", closePopup);
+const popupCloseIcon = document.querySelector(".popup__close-icon");
+const popup = document.querySelector(".popup");
+const popupInputName = document.querySelector(".popup__input-name");
+const popupInputMetier = document.querySelector(".popup__input-metier");
+const profileInfoName = document.querySelector(".profile__info-name");
+const profileInfoMetier = document.querySelector(".profile__info-metier");
 
 function addPopupInputAtributValue() {
   popupInputName.setAttribute("value", profileInfoName.textContent);
   popupInputMetier.setAttribute("value", profileInfoMetier.textContent);
 }
 
-addPopupInputAtributValue();
+function openPopup() {
+  addPopupInputAtributValue();
+  popup.classList.add("popup_open");
+  document.body.style.overflow = "hidden";
+}
 
-console.log(popupInputName.getAttribute("value"));
-console.log(popupInputMetier.getAttribute("value"));
+profileInfoEditButton.addEventListener("click", openPopup);
 
-let popupInputSave = document.querySelector(".popup__input-save");
+function closePopup() {
+  popup.classList.remove("popup_open");
+  document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", function (event) {
+  if (event.code === "Escape") {
+    closePopup();
+  }
+});
+
+popupCloseIcon.addEventListener("click", closePopup);
+
+const popupForm = document.querySelector(".popup__form");
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
   profileInfoName.textContent = popupInputName.value;
   profileInfoMetier.textContent = popupInputMetier.value;
-  console.log(popupInputName.value);
-  console.log("нажал кнопку сохранить");
   closePopup();
 }
 
-popupInputSave.addEventListener("click", formSubmitHandler);
+popupForm.addEventListener("submit", formSubmitHandler);
 
 console.log(profileInfoName.textContent);
