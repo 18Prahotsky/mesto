@@ -40,7 +40,7 @@ let initialCards = [
 const profileInfoEditButton = document.querySelector(
   ".profile__info-edit-button"
 );
-const popupProfile = document.querySelector(".popup__profile");
+const popupProfile = document.querySelector(".popup_profile");
 const popupCloseIconProfile = popupProfile.querySelector(".popup__close-icon");
 
 const popupInputName = popupProfile.querySelector(".popup__input_name");
@@ -84,7 +84,7 @@ popupFormProfile.addEventListener("submit", formSubmitHandler);
 // popup для добавления фотографии
 
 const placeAddButton = document.querySelector(".profile__add-button");
-const popupPlace = document.querySelector(".popup__place");
+const popupPlace = document.querySelector(".popup_place");
 const popupPlaceCloseIcon = popupPlace.querySelector(".popup__close-icon");
 
 function openPopupPlace() {
@@ -221,7 +221,7 @@ photoCard.addEventListener("click", function (event) {
   openPopupImage(photoCardName, photoCardImageLink);
 });
 
-const popupImage = document.querySelector(".popup__image");
+const popupImage = document.querySelector(".popup_image");
 function openPopupImage(name, link) {
   popupImage.style.visibility = "visible";
   popupImage.style.opacity = "1";
