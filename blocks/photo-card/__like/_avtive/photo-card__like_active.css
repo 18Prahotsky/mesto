@@ -1,3 +1,4 @@
 .photo-card__like_active {
 background-image: url(../../../../images/likeActive.svg);
+cursor: pointer;
 }

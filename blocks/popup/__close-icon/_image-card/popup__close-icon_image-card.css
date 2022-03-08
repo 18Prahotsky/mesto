@@ -1,0 +1,11 @@
+.popup__close-icon_image-card {
+  left: 40px;
+  top: -8px;
+}
+
+@media screen and (max-width: 810px) {
+  .popup__close-icon_image-card {
+    left: 0;
+    top: -16;
+  }
+}

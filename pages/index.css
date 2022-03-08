@@ -3,15 +3,26 @@
 
 @import url(../blocks/page/page.css);
 
-@import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__container/popup__container.css);
-@import url(../blocks/popup/__input-metier/popup__input-metier.css);
-@import url(../blocks/popup/__input-name/popup__input-name.css);
+@import url(../blocks/popup/__input/popup__input.css);
+@import url(../blocks/popup/__input/_metier/popup__input_metier.css);
+@import url(../blocks/popup/__input/_name/popup__input_name.css);
+@import url(../blocks/popup/__input/_link/popup__input_link.css);
+@import url(../blocks/popup/__input/_image/popup__input_image.css);
 @import url(../blocks/popup/__input-save/popup__input-save.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__close-icon/popup__close-icon.css);
-@import url(../blocks/popup/_open/popup_open.css);
 @import url(../blocks/popup/__form/popup__form.css);
+
+@import url(../blocks/popup/__profile/popup__profile.css);
+@import url(../blocks/popup/__place/popup__place.css);
+@import url(../blocks/popup/popup.css);
+
+@import url(../blocks/popup/__container-image/popup__container-image.css);
+@import url(../blocks/popup/__card-image/popup__card-image.css);
+@import url(../blocks/popup/__image/popup__image.css);
+@import url(../blocks/popup/__close-icon/_image-card/popup__close-icon_image-card.css);
+@import url(../blocks/popup/__image-title/popup__image-title.css);
 
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
@@ -23,7 +34,7 @@
 @import url(../blocks/profile/__info-edit-button/profile__info-edit-button.css);
 @import url(../blocks/profile/__info-metier/profile__info-metier.css);
 @import url(../blocks/profile/__info/profile__info.css);
-@import url(../blocks/profile/__name/profile__info-name.css);
+@import url(../blocks/profile/__info-name/profile__info-name.css);
 
 @import url(../blocks/photo-card/photo-card.css);
 @import url(../blocks/photo-card/__element/photo-card__element.css);
@@ -33,6 +44,7 @@
 @import url(../blocks/photo-card/__title/photo-card__title.css);
 @import url(../blocks/photo-card/__image-square/photo-card__image-square.css);
 @import url(../blocks/photo-card/__like/_avtive/photo-card__like_active.css);
+@import url(../blocks/photo-card/__trash-button/photo-card__trash-button.css);
 
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 @import url(../blocks/footer/footer.css);

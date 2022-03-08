@@ -1,8 +1,8 @@
 .photo-card__like {
   height: 19px;
   width: 22px;
-  margin-right: 20px;
-  margin-left: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
   background-image: url(../../../images/like.svg);
   background-size: 19px 22px;
   background-position: center;
@@ -11,4 +11,5 @@
 
 .photo-card__like:hover {
   opacity: 0.5;
+  cursor: pointer;
 }

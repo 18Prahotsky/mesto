@@ -11,38 +11,57 @@
   </head>
   <body>
     <div class="page">
-      <section class="popup">
+      <section class="popup popup__profile">
         <div class="popup__container">
           <button class="popup__close-icon"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
           <form class="popup__form">
             <input
               type="text"
-              class="popup__input-name"
+              class="popup__input popup__input_name"
               placeholder="Ваше имя"
             />
             <input
               type="text"
-              class="popup__input-metier"
+              class="popup__input popup__input_metier"
               placeholder="Ваше хобби"
             />
             <button class="popup__input-save" type="submit">Сохранить</button>
           </form>
         </div>
       </section>
-
-      <!-- <section class="popup popup__profile">
+      <section class="popup popup__place">
         <div class="popup__container">
-          <button class="popup__close-button" type="button" aria-label="close"></button>
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="popup__form" name="userform">
-            <input type="text" class="popup__input popup__input_user_name" value="Имя пользователя" name="username">
-            <input type="text" class="popup__input popup__input_user_info" value="Информация о пользователе" name="userinfo">
-            <button class="popup__submit-button" type="submit" value="Сохранить">Сохранить</button>
+          <button class="popup__close-icon"></button>
+          <h2 class="popup__title">Новое место</h2>
+          <form class="popup__form">
+            <input
+              type="text"
+              class="popup__input popup__input_name"
+              placeholder="Название"
+            />
+            <input
+              type="text"
+              class="popup__input popup__input_image"
+              placeholder="Ссылка на картику"
+            />
+            <button class="popup__input-save" type="submit">Сохранить</button>
           </form>
         </div>
-      </section> -->
-
+      </section>
+      <section class="popup popup__image">
+        <div class="popup__container-image">
+          <button
+            class="popup__close-icon popup__close-icon_image-card"
+          ></button>
+          <img
+            src="https://images.unsplash.com/photo-1646621407385-528a18fbe004?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+            alt="Изображение"
+            class="popup__card-image"
+          />
+          <h2 class="popup__image-title">Новое место</h2>
+        </div>
+      </section>
       <header class="header">
         <img src="./images/logo.svg" alt="Место" class="header__logo" />
       </header>
@@ -58,125 +77,19 @@
           </div>
           <button class="profile__add-button"></button>
         </section>
-        <section class="photo-card">
+        <template id="photo-card__template">
           <article class="photo-card__element">
             <div class="photo-card__image-square">
-              <img
-                src="./images/bailkal.jpeg"
-                alt="Байкал"
-                class="photo-card__image"
-              />
+              <button class="photo-card__trash-button"></button>
+              <img src="" alt="Изображение" class="photo-card__image" />
             </div>
             <div class="photo-card__title">
-              <p class="photo-card__name">Байкал</p>
+              <p class="photo-card__name"></p>
               <div class="photo-card__like"></div>
             </div>
           </article>
-          <article class="photo-card__element">
-            <div class="photo-card__image-square">
-              <img
-                src="./images/Kamchatka.jpeg"
-                alt="Камчатка"
-                class="photo-card__image"
-              />
-            </div>
-            <div class="photo-card__title">
-              <p class="photo-card__name">Камчатка</p>
-              <div class="photo-card__like"></div>
-            </div>
-          </article>
-          <article class="photo-card__element">
-            <div class="photo-card__image-square">
-              <img
-                src="./images/Moscow.jpeg"
-                alt="Москва"
-                class="photo-card__image"
-              />
-            </div>
-            <div class="photo-card__title">
-              <p class="photo-card__name">Москва</p>
-              <div class="photo-card__like"></div>
-            </div>
-          </article>
-          <article class="photo-card__element">
-            <div class="photo-card__image-square">
-              <img
-                src="./images/SaintPetersburg.jpeg"
-                alt="Санкт-Петербург"
-                class="photo-card__image"
-              />
-            </div>
-            <div class="photo-card__title">
-              <p class="photo-card__name">Санкт-Петербург</p>
-              <div class="photo-card__like"></div>
-            </div>
-          </article>
-          <article class="photo-card__element">
-            <div class="photo-card__image-square">
-              <img
-                src="./images/Sochi.jpeg"
-                alt="Сочи"
-                class="photo-card__image"
-              />
-            </div>
-            <div class="photo-card__title">
-              <p class="photo-card__name">Сочи</p>
-              <div class="photo-card__like"></div>
-            </div>
-          </article>
-          <article class="photo-card__element">
-            <div class="photo-card__image-square">
-              <img
-                src="./images/Yalta.jpeg"
-                alt="Ялта"
-                class="photo-card__image"
-              />
-            </div>
-            <div class="photo-card__title">
-              <p class="photo-card__name">Ялта</p>
-              <div class="photo-card__like"></div>
-            </div>
-          </article>
-          <article class="photo-card__element">
-            <div class="photo-card__image-square">
-              <img
-                src="./images/ufa.jpeg"
-                alt="Уфа"
-                class="photo-card__image"
-              />
-            </div>
-            <div class="photo-card__title">
-              <p class="photo-card__name">Уфа</p>
-              <div class="photo-card__like"></div>
-            </div>
-          </article>
-          <article class="photo-card__element">
-            <div class="photo-card__image-square">
-              <img
-                src="./images/tula.jpeg"
-                alt="Тула"
-                class="photo-card__image"
-              />
-            </div>
-            <div class="photo-card__title">
-              <p class="photo-card__name">Тула</p>
-              <div class="photo-card__like"></div>
-            </div>
-          </article>
-          <article class="photo-card__element">
-            <div class="photo-card__image-square">
-              <img
-                src="./images/orenburg.jpeg"
-                alt="Оренбург"
-                class="photo-card__image"
-              />
-            </div>
-            <div class="photo-card__title">
-              <p class="photo-card__name">Оренбург</p>
-              <div class="photo-card__like"></div>
-            </div>
-          </article>
-        </section>
+        </template>
+        <section class="photo-card"></section>
       </main>
       <footer class="footer">
         <p class="footer__copyright">© 2022 Mesto Russia</p>
