@@ -148,6 +148,8 @@ photoCards.addEventListener("click", function (event) {
 //Открытие попапа просмотра картинки
 
 const imagePopup = document.querySelector(".popup_image");
+const imageTitlePopup = imagePopup.querySelector(".popup__image-title");
+const imageCardPopup = imagePopup.querySelector(".popup__card-image");
 
 photoCards.addEventListener("click", function (event) {
   if (event.target.className !== "photo-card__image") return;
@@ -163,21 +165,16 @@ photoCards.addEventListener("click", function (event) {
     .closest(".photo-card")
     .querySelector(".photo-card__image-square")
     .querySelector(".photo-card__image").alt;
-  renderImagePopup(
-    imagePopup,
-    photoCardName,
-    photoCardImageLink,
-    photoCardImageAlt
-  );
+  renderImagePopup(photoCardName, photoCardImageLink, photoCardImageAlt);
   openPopup(imagePopup);
 });
 
 // Рендер исходных данных для popup
 
-function renderImagePopup(popup, name, link, alt) {
-  popup.querySelector(".popup__card-image").src = link;
-  popup.querySelector(".popup__image-title").textContent = name;
-  popup.querySelector(".popup__card-image").alt = alt;
+function renderImagePopup(name, link, alt) {
+  imageCardPopup.src = link;
+  imageTitlePopup.textContent = name;
+  imageCardPopup.alt = alt;
 }
 
 //Закрытие попапа просмотра картинки
@@ -187,13 +184,3 @@ imagePopup
   .addEventListener("click", function () {
     closePopup(imagePopup);
   });
-
-// Закрытие попапов при нажатии кнопки escape
-
-document.addEventListener("keydown", function (event) {
-  if (event.code === "Escape") {
-    closePopup(popupProfile);
-    closePopup(addPlacePopup);
-    closePopup(imagePopup);
-  }
-});
