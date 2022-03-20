@@ -1,0 +1,24 @@
+.photo-cards {
+  display: grid;
+  margin: 50px auto 0;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 17px 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .photo-cards {
+    margin: 50px 72px 0;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .photo-cards {
+    margin: 36px 19px 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .photo-cards {
+    grid-gap: 20px;
+  }
+}
