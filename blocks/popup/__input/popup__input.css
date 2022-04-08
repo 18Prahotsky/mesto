@@ -1,6 +1,6 @@
 .popup__input {
   width: 358px;
-  height: 27px;
+  /* min-height: 27px; */
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -14,6 +14,6 @@
 @media screen and (max-width: 810px) {
   .popup__input {
     width: 238px;
-    height: 27px;
+    /* height: 27px; */
   }
 }

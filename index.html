@@ -15,17 +15,33 @@
         <div class="popup__container">
           <button class="popup__close-icon"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="popup__form">
-            <input
-              type="text"
-              class="popup__input popup__input_name"
-              placeholder="Ваше имя"
-            />
-            <input
-              type="text"
-              class="popup__input popup__input_metier"
-              placeholder="Ваше хобби"
-            />
+          <form class="popup__form" novalidate>
+            <label class="popup__label">
+              <input
+                type="text"
+                class="popup__input popup__input_name"
+                id="name-input"
+                placeholder="Имя"
+                required
+                minlength="2"
+                maxlength="40"
+                autocomplete="off"
+              />
+              <span class="name-input-error popup__input-error"></span>
+            </label>
+            <label class="popup__label">
+              <input
+                type="text"
+                class="popup__input popup__input_metier"
+                id="metier-input"
+                placeholder="О себе"
+                required
+                minlength="2"
+                maxlength="200"
+                autocomplete="off"
+              />
+              <span class="metier-input-error popup__input-error"></span>
+            </label>
             <button class="popup__input-save" type="submit">Сохранить</button>
           </form>
         </div>
@@ -34,17 +50,31 @@
         <div class="popup__container">
           <button class="popup__close-icon"></button>
           <h2 class="popup__title">Новое место</h2>
-          <form class="popup__form">
-            <input
-              type="text"
-              class="popup__input popup__input_name"
-              placeholder="Название"
-            />
-            <input
-              type="text"
-              class="popup__input popup__input_image"
-              placeholder="Ссылка на картику"
-            />
+          <form class="popup__form" novalidate>
+            <label class="popup__label">
+              <input
+                type="text"
+                class="popup__input popup__input_name"
+                id="name-input"
+                placeholder="Название"
+                required
+                minlength="2"
+                maxlength="30"
+                autocomplete="off"
+              />
+              <span class="name-input-error popup__input-error"></span>
+            </label>
+            <label class="popup__label">
+              <input
+                type="url"
+                class="popup__input popup__input_image"
+                id="image-input"
+                required
+                placeholder="Ссылка на картику"
+                autocomplete="off"
+              />
+              <span class="image-input-error popup__input-error"></span>
+            </label>
             <button class="popup__input-save" type="submit">Сохранить</button>
           </form>
         </div>
@@ -95,6 +125,7 @@
         <p class="footer__copyright">© 2022 Mesto Russia</p>
       </footer>
     </div>
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

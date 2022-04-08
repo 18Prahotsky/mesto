@@ -54,7 +54,22 @@ const photoCards = document.querySelector(".photo-cards");
 profileInfoEditButton.addEventListener("click", function () {
   addPopupInputAttributeValue();
   openPopup(popupProfile);
+  setInputErrorPopup(profileFormPopup, setupSelector);
 });
+
+//Функция для настройки попапа при открытии (инпуты сброшены, ошибки отсутствуют)
+function setInputErrorPopup(formElement, item) {
+  formElement.reset();
+  const inputList = Array.from(
+    formElement.querySelectorAll(item.inputSelector)
+  ); //".popup__input"
+  const buttonElement = formElement.querySelector(item.submitButtonSelector); //".popup__input-save"
+  inputList.forEach((inputElement) => {
+    hideInputError(formElement, inputElement, item);
+    toggleButtonState(inputList, buttonElement, item);
+  });
+}
+
 profilePopupCloseIcon.addEventListener("click", function () {
   closePopup(popupProfile);
 });
@@ -63,8 +78,11 @@ function openPopup(popup) {
   popup.classList.add("popup_opened");
 }
 
-function closePopup(popup) {
-  popup.classList.remove("popup_opened");
+function closePopup() {
+  const popup = document.querySelector(".popup_opened");
+  if (popup) {
+    popup.classList.remove("popup_opened");
+  }
 }
 
 function addPopupInputAttributeValue() {
@@ -73,7 +91,6 @@ function addPopupInputAttributeValue() {
 }
 
 function handleProfileFormSubmit(e) {
-  e.preventDefault();
   profileInfoName.textContent = popupInputName.value;
   profileInfoMetier.textContent = popupInputMetier.value;
   closePopup(popupProfile);
@@ -85,6 +102,7 @@ profileFormPopup.addEventListener("submit", handleProfileFormSubmit);
 
 addPlaceButton.addEventListener("click", function () {
   openPopup(addPlacePopup);
+  setInputErrorPopup(placeFormPopup, setupSelector);
 });
 
 placePopupCloseIcon.addEventListener("click", function () {
@@ -164,7 +182,7 @@ function renderCard(link, name) {
 //Обработчик «отправки» формы для добавления карточки
 
 function handlePlaceFormSubmit(evt) {
-  evt.preventDefault();
+  // evt.preventDefault();
   const name = placeNameInput.value;
   const link = placeImageInput.value;
   renderCard(link, name);
@@ -180,3 +198,28 @@ imagePopup
   .addEventListener("click", function () {
     closePopup(imagePopup);
   });
+
+//закрытие попапов кликом на оверлэй
+
+function checkOverlayClick(e) {
+  return e.target.classList.contains("popup_opened");
+}
+
+function onOverlayClick(e) {
+  // const popup = document.querySelector(".popup_opened");
+  if (checkOverlayClick(e)) {
+    closePopup();
+  }
+}
+
+document.addEventListener("click", onOverlayClick);
+
+//Закрытие попапов по esc
+
+function onEscapePress(e) {
+  // const popup = document.querySelector(".popup_opened");
+  if (e.code === "Escape") {
+    closePopup();
+  }
+}
+document.addEventListener("keydown", onEscapePress);
