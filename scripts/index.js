@@ -48,11 +48,21 @@ function createCard(item, cardSelector) {
   return photoCardElement;
 }
 
+// Валидация форм
+
+const validPlaceFormPopup = new FormValidator(setupSelector, placeFormPopup);
+validPlaceFormPopup.enableValidation();
+
+const validprofileFormPopup = new FormValidator(
+  setupSelector,
+  profileFormPopup
+);
+validprofileFormPopup.enableValidation();
+
 // popup для редактирования имени пользователя
 
 profileInfoEditButton.addEventListener("click", function () {
-  const valid = new FormValidator(setupSelector, profileFormPopup);
-  valid.enableValidation();
+  validprofileFormPopup.resetValidation();
   addPopupInputAttributeValue();
   openPopup(popupProfile);
 });
@@ -75,8 +85,7 @@ profileFormPopup.addEventListener("submit", handleProfileFormSubmit);
 // popup для добавления карточки
 
 addPlaceButton.addEventListener("click", function () {
-  const valid = new FormValidator(setupSelector, placeFormPopup);
-  valid.enableValidation();
+  validPlaceFormPopup.resetValidation();
   openPopup(addPlacePopup);
 });
 

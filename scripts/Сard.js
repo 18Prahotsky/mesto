@@ -1,16 +1,17 @@
 import { openPopup } from "./utils.js";
 
+const imagePopup = document.querySelector(".popup_image");
+const imagePopupTitle = imagePopup.querySelector(".popup__image-title");
+const imagePopupCardImage = imagePopup.querySelector(".popup__card-image");
+
 export class Card {
   constructor(data, cardSelector) {
     this.link = data.link;
     this.name = data.name;
     this._cardSelector = cardSelector;
-    this._imagePopup = document.querySelector(".popup_image");
-    this._imagePopupTitle = this._imagePopup.querySelector(
-      ".popup__image-title"
-    );
-    this._imagePopupCardImage =
-      this._imagePopup.querySelector(".popup__card-image");
+    this._imagePopup = imagePopup;
+    this._imagePopupTitle = imagePopupTitle;
+    this._imagePopupCardImage = imagePopupCardImage;
     this._element = this._getTemplate();
     this._cardImage = this._element.querySelector(".photo-card__image");
     this._cardName = this._element.querySelector(".photo-card__name");

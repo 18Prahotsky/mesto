@@ -29,7 +29,6 @@ export class FormValidator {
 
   enableValidation = () => {
     this._setEventListener();
-    this._setInputErrorPopup();
   };
 
   _showInputError(inputElement, errorMessage) {
@@ -74,7 +73,7 @@ export class FormValidator {
     }
   }
 
-  _setInputErrorPopup() {
+  resetValidation() {
     this._formElement.reset();
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
