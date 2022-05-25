@@ -1,17 +1,9 @@
-import { openPopup } from "./utils.js";
-
-const imagePopup = document.querySelector(".popup_image");
-const imagePopupTitle = imagePopup.querySelector(".popup__image-title");
-const imagePopupCardImage = imagePopup.querySelector(".popup__card-image");
-
 export class Card {
-  constructor(data, cardSelector) {
+  constructor(data, cardSelector, handleImageClick) {
     this.link = data.link;
     this.name = data.name;
+    this._handleImageClick = handleImageClick;
     this._cardSelector = cardSelector;
-    this._imagePopup = imagePopup;
-    this._imagePopupTitle = imagePopupTitle;
-    this._imagePopupCardImage = imagePopupCardImage;
     this._element = this._getTemplate();
     this._cardImage = this._element.querySelector(".photo-card__image");
     this._cardName = this._element.querySelector(".photo-card__name");
@@ -36,7 +28,7 @@ export class Card {
         this._handleLikeClick(e);
       });
     this._cardImage.addEventListener("click", () => {
-      this._handleImageClick();
+      this._handleImageClick(this.name, this.link);
     });
   }
 
@@ -46,16 +38,6 @@ export class Card {
 
   _handleTrashButtonClick() {
     this._element.closest(".photo-card").remove();
-  }
-
-  _handleImageClick() {
-    this._renderImagePopup(this.name, this.link);
-    openPopup(this._imagePopup);
-  }
-  _renderImagePopup(name, link) {
-    this._imagePopupTitle.textContent = name;
-    this._imagePopupCardImage.src = link;
-    this._imagePopupCardImage.alt = name;
   }
 
   createCard() {
