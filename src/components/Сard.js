@@ -10,10 +10,10 @@ export class Card {
   }
 
   _getTemplate() {
-    const photoCardItem = this._cardSelector
+    const photoCardTemplate = this._cardSelector
       .querySelector(".photo-card")
       .cloneNode(true);
-    return photoCardItem;
+    return photoCardTemplate;
   }
 
   _setEventListeners() {
@@ -37,7 +37,8 @@ export class Card {
   }
 
   _handleTrashButtonClick() {
-    this._element.closest(".photo-card").remove();
+    this._element.remove();
+    this._element = null;
   }
 
   createCard() {
