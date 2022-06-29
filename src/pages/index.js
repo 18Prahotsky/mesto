@@ -2,11 +2,14 @@ import "./index.css";
 import { Card } from "../components/Сard.js";
 import { FormValidator } from "../components/FormValidator.js";
 import { Section } from "../components/Section.js";
-import { initialCards } from "../components/data.js";
 import { setupSelector } from "../components/data.js";
 import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
 import { UserInfo } from "../components/UserInfo.js";
+import { Api } from "../components/Api.js";
+import { config } from "../components/data.js";
+import { FirebaseStorage } from "../components/FirebaseStorage.js";
+import { firebaseConfig } from "../components/data.js";
 
 const imagePopup = document.querySelector(".popup_image");
 const popupProfile = document.querySelector(".popup_profile");
@@ -17,42 +20,59 @@ const profileInfoEditButton = document.querySelector(
   ".profile__info-edit-button"
 );
 
-const buttonAddPlace = document.querySelector(".profile__add-button");
-
-const popupAddPlace = document.querySelector(".popup_place");
-const placeFormPopup = popupAddPlace.querySelector(".popup__form");
+const buttonAddPhoto = document.querySelector(".profile__add-photo");
+const popupAddPhoto = document.querySelector(".popup_photo");
+const photoFormPopup = popupAddPhoto.querySelector(".popup__form");
 
 const templateCard = document.querySelector("#photo-card__template").content;
 
 //Функция для добавления фотокарточки в темплейт
 function addCards(item, templateCard, handleImageClick) {
-  cardList.addItem(createCard(item, templateCard, handleImageClick));
+  const card = createCard(item, templateCard, handleImageClick, api);
+  section().addItem(card);
 }
 
 //Создание карточки
-function createCard(item, templateCard, handleImageClick) {
-  const card = new Card(item, templateCard, handleImageClick);
+function createCard(item, templateCard, handleImageClick, api) {
+  const card = new Card(item, templateCard, handleImageClick, api, {
+    deleteFirebase: (name) => {
+      deletePhotoFromFirebaseStorage(name);
+    },
+  });
   const cardElement = card.createCard();
   return cardElement;
 }
 
 // Отрисовка карточек в темплейт
-const cardList = new Section(
-  {
-    items: initialCards,
-    renderer: (item) => {
-      addCards(item, templateCard, handleImageClick);
-    },
-  },
-  ".photo-cards"
-);
 
-cardList.renderItems();
+const api = new Api(config);
+const cards = api.getAllCards();
+cards
+  .then((data) => {
+    section(data).renderItems();
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+//Функция для создания секуии карточек
+function section(data) {
+  const cardList = new Section(
+    {
+      items: data,
+      renderer: (item) => {
+        addCards(item, templateCard, handleImageClick);
+      },
+    },
+    ".photo-cards"
+  );
+  return cardList;
+}
 
 // Валидация форм
 
-const validPlaceFormPopup = new FormValidator(setupSelector, placeFormPopup);
-validPlaceFormPopup.enableValidation();
+const validPhotoFormPopup = new FormValidator(setupSelector, photoFormPopup);
+validPhotoFormPopup.enableValidation();
 
 const validProfileFormPopup = new FormValidator(
   setupSelector,
@@ -99,26 +119,16 @@ popupProfileWithForm.setEventListeners();
 
 //Блок добавления фото
 
-// popup для добавления карточки
-
-const popupPlaceWithForm = new PopupWithForm(
-  popupAddPlace,
-  handlePlaceFormSubmit
+//popup для добавления фотографии
+const popupPhotoWithForm = new PopupWithForm(
+  popupAddPhoto,
+  handlePhotoFormSubmit // нет функции
 );
 
-buttonAddPlace.addEventListener("click", function () {
-  validPlaceFormPopup.resetValidation();
-  popupPlaceWithForm.open();
+buttonAddPhoto.addEventListener("click", function () {
+  validPhotoFormPopup.resetValidation();
+  popupPhotoWithForm.open();
 });
-
-//Обработчик «отправки» формы для добавления карточки
-
-function handlePlaceFormSubmit(item) {
-  const data = { name: item["name-place-input"], link: item["image-input"] };
-  addCards(data, templateCard, handleImageClick);
-}
-
-popupPlaceWithForm.setEventListeners();
 
 //мягкое связывание imagePopup с классом Card
 
@@ -126,4 +136,45 @@ const popupWithImage = new PopupWithImage(imagePopup);
 
 function handleImageClick(name, link) {
   popupWithImage.open(name, link);
+}
+
+function handlePhotoFormSubmit(item) {
+  uploadFile(item);
+}
+
+popupPhotoWithForm.setEventListeners();
+
+function uploadFile(item) {
+  const selectedFile = document.getElementById("photo-input").files[0];
+  const name = item["name-photo-input"];
+  const firebaseStorage = new FirebaseStorage(
+    firebaseConfig,
+    name,
+    selectedFile,
+    api,
+    {
+      renderer: (data) => {
+        addPhotoToSection(data);
+      },
+    }
+  );
+  firebaseStorage.uploadToFirebaseStorage();
+}
+
+//Функция для удаления фото из firebasestorage
+function deletePhotoFromFirebaseStorage(name) {
+  const firebaseStorage = new FirebaseStorage(firebaseConfig, name, {}, {}, {});
+  firebaseStorage.deletePhoto();
+}
+
+//Функция для добаления фото и отрисовки на секции
+function addPhotoToSection(data) {
+  api
+    .addCards(data)
+    .then((data) => {
+      addCards(data, templateCard, handleImageClick);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }

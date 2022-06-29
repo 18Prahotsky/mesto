@@ -6,10 +6,15 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0 viewport-fit=cover"
     />
+
     <title>Mesto</title>
   </head>
   <body>
     <div class="page">
+      <div class="popup">
+        <div class="popup__spinner"></div>
+      </div>
+
       <section class="popup popup_profile">
         <div class="popup__container">
           <button class="popup__close-icon"></button>
@@ -45,7 +50,7 @@
           </form>
         </div>
       </section>
-      <section class="popup popup_place">
+      <section class="popup popup_photo">
         <div class="popup__container">
           <button class="popup__close-icon"></button>
           <h2 class="popup__title">Новое место</h2>
@@ -54,25 +59,26 @@
               <input
                 type="text"
                 class="popup__input popup__input_name"
-                id="name-place-input"
+                id="name-photo-input"
                 placeholder="Название"
                 required
                 minlength="2"
                 maxlength="30"
                 autocomplete="off"
               />
-              <span class="name-place-input-error popup__input-error"></span>
+              <span class="name-photo-input-error popup__input-error"></span>
             </label>
-            <label class="popup__label">
+            <label class="popup__label popup__label_material-icon">
               <input
-                type="url"
-                class="popup__input popup__input_image"
-                id="image-input"
+                type="file"
+                class="popup__input popup__input_photo"
+                id="photo-input"
                 required
-                placeholder="Ссылка на картику"
+                placeholder="Выбрать изображение"
                 autocomplete="off"
+                accept="image/*"
               />
-              <span class="image-input-error popup__input-error"></span>
+              <span class="photo-input-error popup__input-error"></span>
             </label>
             <button class="popup__input-save" type="submit">Сохранить</button>
           </form>
@@ -103,12 +109,12 @@
           />
           <div class="profile__info">
             <div class="profile__info-block">
-              <p class="profile__info-name">Жак Ив Кусто</p>
+              <p class="profile__info-name">Prahotsky Y</p>
               <button class="profile__info-edit-button"></button>
             </div>
-            <p class="profile__info-metier">Исследователь океана</p>
+            <p class="profile__info-metier">test-project</p>
           </div>
-          <button class="profile__add-button"></button>
+          <button class="profile__add-photo"></button>
         </section>
         <template id="photo-card__template">
           <article class="photo-card">
@@ -125,7 +131,7 @@
         <section class="photo-cards"></section>
       </main>
       <footer class="footer">
-        <p class="footer__copyright">© 2022 Mesto Russia</p>
+        <p class="footer__copyright">© 2022 Prahotsky</p>
       </footer>
     </div>
   </body>

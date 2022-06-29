@@ -1,0 +1,11 @@
+.popup__input_photo {
+  margin: 0 auto 0;
+
+
+}
+
+@media screen and (max-width: 810px) {
+  .popup__input_photo {
+    margin: 0 auto 0;
+  }
+}

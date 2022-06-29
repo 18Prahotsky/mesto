@@ -1,0 +1,24 @@
+.profile__add-photo {
+  margin: auto 0 auto auto;
+  padding: 0;
+  height: 50px;
+  min-width: 150px;
+  background-image: url(../../../images/icons8-фотоаппарат.svg);
+  background-color: transparent;
+  background-size: 22px 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid #fff;
+}
+
+@media screen and (max-width: 810px) {
+  .profile__add-photo {
+    margin: 36px auto 0;
+    width: 282px;
+  }
+}
+
+.profile__add-photo:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
